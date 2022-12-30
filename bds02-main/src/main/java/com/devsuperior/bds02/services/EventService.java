@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.devsuperior.bds02.dto.EventDTO;
 import com.devsuperior.bds02.entities.City;
 import com.devsuperior.bds02.entities.Event;
-import com.devsuperior.bds02.reporitories.EventRepository;
+import com.devsuperior.bds02.repositories.EventRepository;
 import com.devsuperior.bds02.services.exceptions.ResourceNotFoundException;
 
 @Service
