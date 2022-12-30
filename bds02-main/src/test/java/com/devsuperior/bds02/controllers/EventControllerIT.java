@@ -13,6 +13,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.devsuperior.bds02.dto.EventDTO;
@@ -30,6 +31,7 @@ public class EventControllerIT {
 	private ObjectMapper objectMapper;
 	
 	@Test
+	@Transactional(propagation = Propagation.NEVER)
 	public void updateShouldUpdateResourceWhenIdExists() throws Exception {
 
 		long existingId = 1L;
@@ -53,6 +55,7 @@ public class EventControllerIT {
 	}
 
 	@Test
+	@Transactional(propagation = Propagation.NEVER)
 	public void updateShouldReturnNotFoundWhenIdDoesNotExist() throws Exception {
 
 		long nonExistingId = 1000L;
